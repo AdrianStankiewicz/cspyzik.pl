@@ -23,11 +23,21 @@ nav {
   left: 0;
   top: 0;
   right: 0;
-  background-color: #404040;
+  background-color: #3e3e42;
 }
 
 nav .logo {
-  color: white;
+  text-transform: uppercase;
+  font-family: "Kanit", sans-serif;
+  font-size: 5.5vw;
+}
+
+nav .logo .blue {
+  color: #007acc;
+}
+
+nav .logo .orange {
+  color: #ee7425;
 }
 
 nav .nav-links {
@@ -53,16 +63,20 @@ nav .nav-links {
   transition: -webkit-transform 0.5s ease-in;
   transition: transform 0.5s ease-in;
   transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
-  background-color: #404040;
+  background-color: #3e3e42;
 }
 
 nav .nav-links li {
   list-style: none;
   opacity: 0;
+  margin-top: 4vh;
 }
 
 nav .nav-links a {
   text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Kanit", sans-serif;
+  font-size: 6vw;
   color: white;
 }
 
@@ -155,11 +169,11 @@ main section {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 90vh;
-  padding: 5vh 5vw;
+  padding: 3vh 5vw 12vh 5vw;
   height: auto;
 }
 
-main section #kontakt {
+#kontakt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,5 +187,76 @@ main section #kontakt {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#kontakt #number {
+  text-align: center;
+}
+
+#kontakt a {
+  text-decoration: none;
+  color: #3e3e42;
+  font-weight: 700;
+  font-size: 12vw;
+  font-family: "Kanit", sans-serif;
+}
+
+#kontakt img {
+  width: 60%;
+}
+
+#serwis {
+  padding: 3vh 3vw 3vh 3vw;
+}
+
+#serwis h1 {
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  line-height: 1.2;
+  font-size: 40px;
+  word-spacing: 0.1cm;
+  font-weight: 500;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+}
+
+#serwis p {
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+#marki h1 {
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  line-height: 1.2;
+  font-size: 40px;
+  word-spacing: 0.1cm;
+  font-weight: 500;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+
+#marki img {
+  width: 100%;
+}
+
+#marki #slideshow {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#marki #slideshow > div {
+  position: absolute;
+  margin: auto;
 }
 /*# sourceMappingURL=index.css.map */

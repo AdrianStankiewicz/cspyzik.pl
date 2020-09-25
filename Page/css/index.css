@@ -9,61 +9,48 @@ body {
   overflow: hidden;
 }
 
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 10vh;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  right: 0;
-  background-color: #3e3e42;
-}
-
-nav .logo {
-  text-transform: uppercase;
+a {
+  text-decoration: none;
+  color: #3e3e42;
+  font-weight: 700;
   font-family: "Kanit", sans-serif;
-  font-size: 5.5vw;
 }
 
-nav .logo .blue {
-  color: #007acc;
+a:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
-nav .logo .orange {
-  color: #ee7425;
-}
-
-nav .nav-links {
-  z-index: 1;
-  position: fixed;
-  right: 0;
-  top: 10vh;
-  height: 100vh;
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.5s ease-in;
-  transition: -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+nav {
   background-color: #3e3e42;
+}
+
+@media all and (max-width: 768px) {
+  nav .nav-links {
+    z-index: 1;
+    position: fixed;
+    right: 0;
+    top: 10vh;
+    height: 100vh;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+    background-color: #3e3e42;
+  }
 }
 
 nav .nav-links li {
@@ -73,15 +60,10 @@ nav .nav-links li {
 }
 
 nav .nav-links a {
-  text-decoration: none;
   text-transform: uppercase;
-  font-family: "Kanit", sans-serif;
   font-size: 6vw;
+  font-weight: 500;
   color: white;
-}
-
-nav .nav-links a:hover {
-  cursor: pointer;
 }
 
 nav .nav-active {
@@ -144,7 +126,6 @@ nav .toggle .line3 {
 
 main {
   position: fixed;
-  top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,8 +134,6 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-y: scroll;
-  height: 90vh;
-  width: 100vw;
 }
 
 main section {
@@ -168,12 +147,21 @@ main section {
   width: 100%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  min-height: 90vh;
-  padding: 3vh 5vw 12vh 5vw;
   height: auto;
 }
 
-#kontakt {
+main section h1 {
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  line-height: 1;
+  font-size: 40px;
+  word-spacing: 0.1cm;
+  font-weight: 700;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+}
+
+main #kontakt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,61 +177,15 @@ main section {
           justify-content: center;
 }
 
-#kontakt #number {
+main #kontakt #number {
   text-align: center;
 }
 
-#kontakt a {
-  text-decoration: none;
-  color: #3e3e42;
-  font-weight: 700;
-  font-size: 12vw;
-  font-family: "Kanit", sans-serif;
-}
-
-#kontakt img {
+main #kontakt img {
   width: 60%;
 }
 
-#serwis {
-  padding: 3vh 3vw 3vh 3vw;
-}
-
-#serwis h1 {
-  text-align: center;
-  font-family: "Kanit", sans-serif;
-  line-height: 1.2;
-  font-size: 40px;
-  word-spacing: 0.1cm;
-  font-weight: 500;
-  margin-top: 5vh;
-  margin-bottom: 2vh;
-}
-
-#serwis p {
-  text-align: justify;
-  text-justify: inter-word;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-#marki h1 {
-  text-align: center;
-  font-family: "Kanit", sans-serif;
-  line-height: 1.2;
-  font-size: 40px;
-  word-spacing: 0.1cm;
-  font-weight: 500;
-  margin-top: 2vh;
-  margin-bottom: 5vh;
-}
-
-#marki img {
-  width: 100%;
-}
-
-#marki #slideshow {
+main #marki #slideshow {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,8 +197,126 @@ main section {
       align-content: center;
 }
 
-#marki #slideshow > div {
+main #marki #slideshow > div {
   position: absolute;
   margin: auto;
+}
+
+main #serwis {
+  padding: 3vh 3vw 15vh 3vw;
+}
+
+main #serwis p {
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+@media all and (max-width: 768px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 10vh;
+    width: 100vw;
+  }
+  nav img {
+    display: none;
+  }
+  nav .logo {
+    text-transform: uppercase;
+    font-family: "Kanit", sans-serif;
+    font-size: 5.5vw;
+  }
+  nav .logo .blue {
+    color: #007acc;
+  }
+  nav .logo .orange {
+    color: #ee7425;
+  }
+  main {
+    top: 10vh;
+    height: 90vh;
+    width: 100vw;
+  }
+  main section {
+    min-height: 90vh;
+    padding: 3vh 5vw 12vh 5vw;
+  }
+  #kontakt a {
+    font-size: 12vw;
+  }
+  #marki img {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 769px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    height: 100vh;
+    width: 20vw;
+  }
+  nav .logo {
+    display: none;
+  }
+  nav img {
+    padding-top: 10vh;
+    width: 80%;
+    height: auto;
+  }
+  nav .nav-links li {
+    list-style: none;
+    opacity: 1;
+    text-align: center;
+  }
+  nav .nav-links a {
+    font-size: 2vw;
+  }
+  nav .burger {
+    display: none;
+  }
+  main {
+    position: relative;
+    top: 0;
+    height: 100vh;
+    width: 80vw;
+  }
+  main section {
+    min-height: 100vh;
+    padding: 3vh 5vw;
+  }
+  main #kontakt a {
+    font-size: 9vw;
+  }
+  main #marki img {
+    width: 25vw;
+  }
 }
 /*# sourceMappingURL=index.css.map */

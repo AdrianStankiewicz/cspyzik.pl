@@ -3,7 +3,6 @@ $logoBlue: #007acc; //#1e5cab;
 $backgroundColor: #e6dbc9;
 $coolColor: #3e3e42; //#404040;
 $coolFontFamily: "Kanit", sans-serif;
-$textFontFamily: "Roboto", sans-serif;
 
 * {
     margin: 0;
@@ -13,44 +12,34 @@ $textFontFamily: "Roboto", sans-serif;
 body {
     overflow: hidden;
 }
+a {
+    text-decoration: none;
+    color: $coolColor;
+    font-weight: 700;
+    font-family: $coolFontFamily;
+}
+a:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    height: 10vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    right: 0;
-
     background-color: $coolColor;
 
-    .logo {
-        text-transform: uppercase;
-        font-family: $coolFontFamily;
-        font-size: 5.5vw;
-
-        .blue {
-            color: $logoBlue;
-        }
-        .orange {
-            color: $logoOrange;
-        }
-    }
     .nav-links {
-        z-index: 1;
-        position: fixed;
-        right: 0;
-        top: 10vh;
-        height: 100vh;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        background-color: $coolColor;
+        @media all and (max-width: 768px) {
+            z-index: 1;
+            position: fixed;
+            right: 0;
+            top: 10vh;
+            height: 100vh;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+            background-color: $coolColor;
+        }
 
         li {
             list-style: none;
@@ -58,14 +47,10 @@ nav {
             margin-top: 4vh;
         }
         a {
-            text-decoration: none;
             text-transform: uppercase;
-            font-family: $coolFontFamily;
             font-size: 6vw;
+            font-weight: 500;
             color: white;
-        }
-        a:hover {
-            cursor: pointer;
         }
     }
     .nav-active {
@@ -105,12 +90,9 @@ nav {
 }
 main {
     position: fixed;
-    top: 10vh;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 90vh;
-    width: 100vw;
 
     section {
         display: flex;
@@ -118,79 +100,164 @@ main {
 
         width: 100%;
         flex-shrink: 0;
-        min-height: 90vh;
-        padding: 3vh 5vw 12vh 5vw;
         height: auto;
-    }
-}
 
-#kontakt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+        h1 {
+            text-align: center;
+            font-family: $coolFontFamily;
 
-    #number {
-        text-align: center;
+            line-height: 1;
+            font-size: 40px;
+            word-spacing: 0.1cm;
+            font-weight: 700;
+            margin-top: 5vh;
+            margin-bottom: 2vh;
+        }
     }
-    a {
-        text-decoration: none;
-        color: $coolColor;
-        font-weight: 700;
-        font-size: 12vw;
-        font-family: $coolFontFamily;
-    }
-    img {
-        width: 60%;
-    }
-}
-#serwis {
-    padding: 3vh 3vw 3vh 3vw;
-
-    h1 {
-        text-align: center;
-        font-family: $coolFontFamily;
-
-        line-height: 1.2;
-        font-size: 40px;
-        word-spacing: 0.1cm;
-        font-weight: 500;
-        margin-top: 5vh;
-        margin-bottom: 2vh;
-    }
-    p {
-        text-align: justify;
-        text-justify: inter-word;
-        font-family: $textFontFamily;
-
-        font-size: 20px;
-        line-height: 1.6;
-    }
-}
-#marki {
-    h1 {
-        text-align: center;
-        font-family: $coolFontFamily;
-
-        line-height: 1.2;
-        font-size: 40px;
-        word-spacing: 0.1cm;
-        font-weight: 500;
-        margin-top: 2vh;
-        margin-bottom: 5vh;
-    }
-    img {
-        width: 100%;
-    }
-    #slideshow {
-        position: relative;
+    #kontakt {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        align-content: center;
+    
+        #number {
+            text-align: center;
+        }
+        img {
+            width: 60%;
+        }
     }
+    #marki {
+        #slideshow {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+    
+        #slideshow > div {
+            position: absolute;
+            margin: auto;
+        }
+    }
+    #serwis {
+        padding: 3vh 3vw 15vh 3vw;
+    
+        p {
+            text-align: justify;
+            text-justify: inter-word;
+            
+            font-family: $coolFontFamily;
+            font-weight: 300;
+            font-size: 20px;
+            
+            line-height: 1.4;
+        }
+    }
+}
 
-    #slideshow > div {
-        position: absolute;
-        margin: auto;
+@media all and (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 10vh;
+        width: 100vw;
+
+        img {
+            display: none;
+        }
+        .logo {
+            text-transform: uppercase;
+            font-family: $coolFontFamily;
+            font-size: 5.5vw;
+    
+            .blue {
+                color: $logoBlue;
+            }
+            .orange {
+                color: $logoOrange;
+            }
+        }
+    }
+    main {
+        top: 10vh;
+        height: 90vh;
+        width: 100vw;
+
+        section {
+            min-height: 90vh;
+            padding: 3vh 5vw 12vh 5vw;
+        }
+    }
+    #kontakt {
+        a {
+            font-size: 12vw;
+        }
+    }
+    #marki {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media all and (min-width: 769px) {
+    body {
+        display: flex;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+        width: 20vw;
+        .logo {
+            display: none;
+        }
+        img {
+            padding-top: 10vh;
+            width: 80%;
+            height: auto;
+        }
+        .nav-links {
+            li {
+                list-style: none;
+                opacity: 1;
+                text-align: center;
+            }
+            a {
+                font-size: 2vw;
+            }
+        }
+        .burger {
+            display: none;
+        }
+    }
+    main {
+        position: relative;
+        top: 0;
+        height: 100vh;
+        width: 80vw;
+
+        section {
+            min-height: 100vh;
+            padding: 3vh 5vw;
+        }
+        #kontakt {
+            a {
+                font-size: 9vw;
+            }
+        }
+        #marki {
+            img {
+                width: 25vw;
+            }
+        }
     }
 }
